@@ -35,3 +35,29 @@ app.post("/notify", async (req, res) => {
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`✅ Drop-Scout Notify listening on ${port}`));
+
+const express = require('express');
+const fetch = require('node-fetch');
+const app = express();
+
+app.use(express.json());
+
+app.post('/notify', async (req, res) => {
+  const webhookURL = 'YOUR_DISCORD_WEBHOOK_URL_HERE';
+  const message = req.body.message || 'Default notification from Drop-Scout!';
+
+  try {
+    await fetch(webhookURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ content: message }),
+    });
+    res.status(200).send('✅ Notification sent!');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('❌ Error sending notification.');
+  }
+});
+
+const port = process.env.PORT || 10000;
+app.listen(port, () => console.log(`🚀 App live on port ${port}`));
