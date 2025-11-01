@@ -1,12 +1,23 @@
 {
-  "name": "your-project-name",
+  "name": "drop-scout-notify",
   "version": "1.0.0",
-  "description": "A quick project description",
-  **"type": "module",** "main": "index.js",
+  "description": "Your project description.",
+  "type": "module",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    // ... your dependencies
+    "express": "^4.18.2",
+    "helmet": "^7.1.0",
+    "express-rate-limit": "^7.1.5",
+    "cors": "^2.8.5",
+    "node-fetch": "^3.3.2"
+    // <--- NOTE: NO comma allowed after the last dependency!
+  },
+  "devDependencies": {
+    // If you have any dev dependencies, list them here.
+    // Example: "nodemon": "^3.0.1"
   }
+  // <--- NOTE: NO comma allowed here!
 }
