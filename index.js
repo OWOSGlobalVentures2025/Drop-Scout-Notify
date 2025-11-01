@@ -36,9 +36,7 @@ app.post("/notify", async (req, res) => {
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`✅ Drop-Scout Notify listening on ${port}`));
 
-const express = require('express');
 const fetch = require('node-fetch');
-const app = express();
 
 app.use(express.json());
 
