@@ -1,4 +1,4 @@
-import express from "express";
+ import express from "express";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import cors from "cors";
@@ -38,12 +38,8 @@ app.listen(port, () => console.log(`✅ Drop-Scout Notify listening on ${port}`)
 
 const fetch = require('node-fetch');
 
-app.use(express.json());
-
 app.post('/notify', async (req, res) => {
-  const webhookURL = 'YOUR_DISCORD_WEBHOOK_URL_HERE';
-  const message = req.body.message || 'Default notification from Drop-Scout!';
-
+  
   try {
     await fetch(webhookURL, {
       method: 'POST',
