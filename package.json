@@ -13,11 +13,5 @@
     "express-rate-limit": "^7.1.5",
     "cors": "^2.8.5",
     "node-fetch": "^3.3.2"
-    // <--- NOTE: NO comma allowed after the last dependency!
-  },
-  "devDependencies": {
-    // If you have any dev dependencies, list them here.
-    // Example: "nodemon": "^3.0.1"
   }
-  // <--- NOTE: NO comma allowed here!
 }
